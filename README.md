@@ -13,3 +13,55 @@ Scalability: This structure is highly scalable. As new features or entities are 
 
 Ease of Testing: The modular nature of this architecture makes testing more straightforward. Individual components or features can be tested in isolation, and the organization helps avoid tight coupling between features. Mocking configurations and APIs is made easier by keeping related logic centralized.
 
+# How to Run Countries Explorer Project
+
+## Prerequisites
+
+Ensure you have the following installed:
+- Node.js (>= 14.x)
+- npm (or yarn)
+- Docker (optional for running with Docker)
+
+## Steps to Run Locally
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/countries-explorer.git
+    cd countries-explorer
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Create a `.env` file in the root with the following:
+    ```bash
+    VITE_COUNTRIES_GRAPHQL_API=https://graphql.country/graphql
+    VITE_WEATHER_API_KEY=3db51f1f9bb4a9bf8a18dd464be72c68
+    ```
+
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+5. Access the app at:
+    [http://localhost:3000](http://localhost:3000)
+
+## Steps to Run with Docker
+
+1. Build the Docker image:
+    ```bash
+    docker build -t countries-explorer .
+    ```
+
+2. Run the container:
+    ```bash
+    docker run -p 3000:3000 \
+      -e VITE_COUNTRIES_GRAPHQL_API=https://graphql.country/graphql \
+      -e VITE_WEATHER_API_KEY=3db51f1f9bb4a9bf8a18dd464be72c68 \
+      countries-explorer
+    ```
+
+Access the app at [http://localhost:3000](http://localhost:3000).
